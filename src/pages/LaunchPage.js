@@ -1,16 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import { withStyles, Grid, Button } from '@material-ui/core'
-import { LaunchPageStyles } from '../stylesheets/material-ui'
-import { LinkStartBtn } from '../components/LaunchPage'
+import { LaunchForm, LinkStartBtn } from '../components/LaunchPage'
 
-const LaunchPage = ({ classes }) => (
+const LaunchPage = () => (
   <div className="launch-page full-container parchment">
-    {/* Settings Form */}
     {/* Instructional Demo */}
+    <LaunchForm />
     <LinkStartBtn path="/test" />
   </div>
 )
 
-export default withStyles(LaunchPageStyles)(LaunchPage)
+export default LaunchPage
