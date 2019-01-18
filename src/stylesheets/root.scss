@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+.clean-link {
+  text-decoration: none;
+}
+
 /*** PAGE LAYOUT ***/
 
 .full-container {
@@ -35,7 +39,13 @@ $primary-dark: #205723;
 $primary-medium: #5a8b5c;
 $primary-light: #96c267;
 
+$white: #fefefe;
+$parchment: #f8f6f1;
 $copper: #b88933;
+
+.parchment {
+  background-color: $parchment;
+}
 
 /*** BOX SHADOW ***/
 

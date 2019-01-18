@@ -1,16 +1,19 @@
 import React from 'react'
 
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavBar from '../ui/NavBar'
-import WelcomePage from '../pages/WelcomePage'
+import { WelcomePage, LaunchPage } from '../pages'
 
 const PrimaryLayout = () => (
   <div id="primary-layout" className="full-container">
     <NavBar />
     <main className="primary-main">
       <Switch>
-        <Route path='/' exact component={WelcomePage} />
+        <Route path='/welcome' exact component={WelcomePage} />
+        <Route path='/launch' component={LaunchPage} />
+        <Route path='/test' render={() => 'test'} />
+        <Redirect to='/welcome' />
       </Switch>
     </main>
   </div>

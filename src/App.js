@@ -5,7 +5,7 @@ import { PrimaryLayout } from './layouts'
 
 const App = () => (
   <BrowserRouter>
-    <Route exact path='/' component={PrimaryLayout} />
+    <Route path='/' component={PrimaryLayout} />
   </BrowserRouter>
 )
 
