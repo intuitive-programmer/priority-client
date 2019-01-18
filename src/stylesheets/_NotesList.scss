@@ -1,0 +1,91 @@
+.note-item-container,
+.note-keywords
+ {
+  display: flex;
+  align-items: center;
+}
+
+.note-item-container {
+  position: relative;
+  height: 2.5em;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  background-color: $white;
+}
+
+.note-text,
+.keyword-chip {
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.875em;
+}
+
+.note-text {
+  width: 8.5em;
+  height: 2em;
+  z-index: 200;
+  padding: 0.5em 0.25em 0.5em 0;
+  border-right: 0.125em solid $primary-main;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: $primary-main;
+  background-color: $white;
+}
+
+.short {
+  animation-name: shrink-to-short;
+  animation-duration: 0.5s; 
+  animation-timing-function: ease-in-out; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink-to-short {
+  0% {
+    width: 100%;
+    border-right: none;
+  }
+  20%, 80% {
+    border-right: 0.1875em solid $primary-main;
+  }
+}
+
+.long {
+  animation-name: expand-to-long;
+  animation-duration: 0.5s; 
+  animation-timing-function: ease-in-out; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand-to-long {
+  0%, 80% {
+    border-right: 0.1875em solid $primary-main;
+  }
+  100% {
+    width: 100%;
+    border-right: none;
+    text-overflow: unset;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+}
+
+.keywords-container {
+  position: absolute;
+  left: 8.25em;
+  // overflow-x: auto;
+  // overflow needs to be looked at
+}
+
+.keyword-chip {
+  width: fit-content;
+  height: auto;
+  margin: 0 0.125em; 
+  padding: 0.25em 0.625em 0.25em 0.625em;
+  border-radius: 1em;
+  background-color: $primary-main;
+  font-size: 0.75em;
+  color: $white;
+}

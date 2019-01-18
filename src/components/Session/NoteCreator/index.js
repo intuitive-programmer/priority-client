@@ -80,16 +80,16 @@ class NoteCreator extends Component {
       <Grid
         container
         classes={{ container: classes.centered }}
-        spacing={16}
         xs={12}
         sm={8}
       >
         <Grid
           item
+          classes={{ item: classes.noteCreatorItem }}
           xs={12}
           sm={8}
         >
-          <div className="note-creator">
+          <div className="note-creator note-shadow">
             <Add
               classes={{
                 root: classes.addIcon

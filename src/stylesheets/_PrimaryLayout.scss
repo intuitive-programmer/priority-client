@@ -1,24 +1,24 @@
 .nav-bar {
   position: relative;
   width: 100%;
-  height: 48px;
+  height: 3em;
   display: flex;
   align-items: center;
 }
 
 .launch-btn {
-  width: 80px;
-  height: 40px;
+  width: 5em;
+  height: 2.5em;
   margin: 0 3% 0 auto;
 }
 
 .primary-main {
-  height: calc(100% - 48px)
+  height: calc(100% - 3em)
 }
 
 .welcome-header {
   width: 100%;
-  height: 60%;
-  border-bottom: 2px solid $copper;
+  height: 24em;
+  border-bottom: 0.125em solid $copper;
   background-color: $primary-main;
 }

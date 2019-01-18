@@ -3,6 +3,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NoteCreator from '../components/Session/NoteCreator'
+import NotesList from '../components/Session/NotesList'
 
 const SessionLayout = () => (
   <div id="session-layout" className="full-container parchment">
@@ -12,10 +13,9 @@ const SessionLayout = () => (
       </Switch>
     </header>
     <main className="session-main">
-        <Route path='/app/note' render={() => <div>NoteMain</div>} />
       <Switch>
-        <Route path='/app/note/start' render={() => <div>NoteStart</div>} />
-        <Redirect to='/app/note/start' />
+        <Route path='/app/note/write' component={NotesList} />
+        <Redirect to='/app/note/write' />
       </Switch>
     </main>
     <footer className="session-footer flex-center top-shadow">

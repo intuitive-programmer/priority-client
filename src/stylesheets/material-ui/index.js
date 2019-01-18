@@ -15,11 +15,11 @@ const theme = createMuiTheme({
 
 const PrimaryLayoutStyles = {
   launchBtn: {
-    padding: '4px 8px',
+    padding: '0.25em 0.5em',
     fontWeight: 600,
     color: '#739574',
       '&:hover': {
-        border: '1px solid #b88933',
+        border: '0.0625em solid #b88933',
         backgroundColor: white
       }
   }
@@ -28,7 +28,7 @@ const PrimaryLayoutStyles = {
 const LaunchPageStyles = {
   centered: {
     margin: '0 auto',
-    padding: '0 8px',
+    padding: '0 0.5em',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
@@ -41,7 +41,7 @@ const LaunchPageStyles = {
     justifyContent: 'center',
   },
   startBtn: {
-    padding: '4px 8px',
+    padding: '0.25em 0.5em',
     fontWeight: 600,
     color: white,
     backgroundColor: primaryMedium,
@@ -54,10 +54,16 @@ const LaunchPageStyles = {
 const SessionStyles = {
   centered: {
     margin: '0 auto',
-    padding: '0 8px',
+    padding: '0 0.5em',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  noteCreatorItem: {
+    padding: '0.5em 0.125em 0',
+  },
+  noteItem: {
+    padding: '0.125em'
   },
   addIcon: {
     color: white

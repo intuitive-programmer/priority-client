@@ -57,14 +57,19 @@ $error-message: #a73a38;
   box-shadow: $params;
 }
 
+.note-shadow {
+  z-index: 25;
+  @include box-shadow(0 0.0625em 0.125em rgba(0, 0, 0, 0.16), 0 0.0625em 0.125em rgba(0, 0, 0, 0.23));
+}
+
 .light-shadow {
   z-index: 50;
-  @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.16), 0px 2px 5px rgba(0, 0, 0, 0.23));
+  @include box-shadow(0 0.125em 0.3125em rgba(0, 0, 0, 0.16), 0 0.125em 0.3125em rgba(0, 0, 0, 0.23));
 }
 
 .top-shadow {
   z-index: 25;
-  @include box-shadow(0px -1px 4px rgba(0, 0, 0, 0.08), 0px -1px 4px rgba(0, 0, 0, 0.12));
+  @include box-shadow(0 -0.0625em 0.25em rgba(0, 0, 0, 0.08), 0 -0.0625em 0.25em rgba(0, 0, 0, 0.12));
 }
 
 /*** IMPORTS ***/
@@ -73,3 +78,4 @@ $error-message: #a73a38;
 @import 'LaunchPage';
 @import 'SessionLayout';
 @import 'NoteCreator';
+@import 'NotesList';
