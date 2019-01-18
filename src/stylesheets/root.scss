@@ -60,7 +60,13 @@ $copper: #b88933;
   @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.16), 0px 2px 5px rgba(0, 0, 0, 0.23));
 }
 
+.top-shadow {
+  z-index: 25;
+  @include box-shadow(0px -1px 4px rgba(0, 0, 0, 0.08), 0px -1px 4px rgba(0, 0, 0, 0.12));
+}
+
 /*** IMPORTS ***/
 
 @import 'PrimaryLayout';
 @import 'LaunchPage';
+@import 'SessionLayout';

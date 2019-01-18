@@ -6,7 +6,7 @@ const LaunchPage = () => (
   <div className="launch-page full-container parchment">
     <Demo />
     <LaunchForm />
-    <LinkStartBtn path="/test" />
+    <LinkStartBtn path="/app" />
   </div>
 )
 
