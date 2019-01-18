@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { LaunchForm, LinkStartBtn } from '../components/LaunchPage'
+import { Demo, LaunchForm, LinkStartBtn } from '../components/LaunchPage'
 
 const LaunchPage = () => (
   <div className="launch-page full-container parchment">
-    {/* Instructional Demo */}
+    <Demo />
     <LaunchForm />
     <LinkStartBtn path="/test" />
   </div>

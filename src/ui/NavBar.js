@@ -1,19 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import { withStyles, Button } from '@material-ui/core'
-import { PrimaryLayoutStyles } from '../stylesheets/material-ui'
+import { LinkLaunchBtn } from '../components/NavBar'
 
-const NavBar = ({ classes }) => (
+const NavBar = () => (
   <header className="nav-bar light-shadow">
-    <div className="launch-btn flex-center">
-      <Link to='/launch' className="clean-link">
-        <Button
-          classes={{ root: classes.launchBtn }}
-        >Launch</Button>
-      </Link>
-    </div>
+    <Route path='/welcome' exact component={LinkLaunchBtn} />
   </header>
 )
 
-export default withStyles(PrimaryLayoutStyles)(NavBar)
+export default NavBar

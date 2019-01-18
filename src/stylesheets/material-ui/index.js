@@ -26,8 +26,8 @@ const PrimaryLayoutStyles = {
 
 const LaunchPageStyles = {
   centered: {
-    margin: '0px auto',
-    padding: '0px 12px',
+    margin: '0 auto',
+    padding: '0 12px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
