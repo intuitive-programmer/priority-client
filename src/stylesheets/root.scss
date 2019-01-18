@@ -43,6 +43,8 @@ $white: #fefefe;
 $parchment: #f8f6f1;
 $copper: #b88933;
 
+$error-message: #a73a38;
+
 .parchment {
   background-color: $parchment;
 }
@@ -70,3 +72,4 @@ $copper: #b88933;
 @import 'PrimaryLayout';
 @import 'LaunchPage';
 @import 'SessionLayout';
+@import 'NoteCreator';

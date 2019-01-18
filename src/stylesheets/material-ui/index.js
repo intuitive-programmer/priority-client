@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
 
 const primaryMedium = '#5a8b5c'
+const white = '#fefefe'
 
 const theme = createMuiTheme({
   palette: {
@@ -19,7 +20,7 @@ const PrimaryLayoutStyles = {
     color: '#739574',
       '&:hover': {
         border: '1px solid #b88933',
-        backgroundColor: '#fefefe'
+        backgroundColor: white
       }
   }
 }
@@ -27,7 +28,7 @@ const PrimaryLayoutStyles = {
 const LaunchPageStyles = {
   centered: {
     margin: '0 auto',
-    padding: '0 12px',
+    padding: '0 8px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
@@ -42,7 +43,7 @@ const LaunchPageStyles = {
   startBtn: {
     padding: '4px 8px',
     fontWeight: 600,
-    color: '#fefefe',
+    color: white,
     backgroundColor: primaryMedium,
       '&:hover': {
         color: primaryMedium
@@ -50,8 +51,22 @@ const LaunchPageStyles = {
   }
 }
 
+const SessionStyles = {
+  centered: {
+    margin: '0 auto',
+    padding: '0 8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  addIcon: {
+    color: white
+  }
+}
+
 export {
   theme,
   PrimaryLayoutStyles,
-  LaunchPageStyles
+  LaunchPageStyles,
+  SessionStyles
 }
