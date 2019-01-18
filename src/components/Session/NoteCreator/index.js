@@ -75,7 +75,7 @@ class NoteCreator extends Component {
 
   render() {
     const { inputError } = this.state
-    const { classes } = this.props
+    const { classes, disableNoteCreator } = this.props
     return(
       <Grid
         container
@@ -102,6 +102,7 @@ class NoteCreator extends Component {
             >
               <NoteInput
                 handleNoteInput={this.handleNoteInput}
+                disableNoteCreator={disableNoteCreator}
               />
             </form>
           </div>
