@@ -10,12 +10,20 @@ class SessionLayout extends Component {
     disableNoteCreator: false,
   }
 
-  startTimer = () => {
-    setTimeout(() =>
+  startTimer = scene => {
+    const { history } = this.props
+
+    if (scene === 'note') {
+      setTimeout(() =>
       this.setState({
         displayTimer: true,
         disableNoteCreator: true
-      }), 10000)
+      }), 20000)
+    } else if (scene === 'vote') {
+      setTimeout(() => {
+        history.push('/app/vote/review')
+      }, 10000)
+    }
   }
 
   addTime = () => {
@@ -75,11 +83,14 @@ class SessionLayout extends Component {
                 />
               }
             />
+            <Route path='/app/vote/write' component={NotesList} />
+            <Route path='/app/vote/review' component={NotesList} />
             <Redirect to='/app/note/start' />
           </Switch>
         </main>
         <Switch>
           <Route path='/app/note/review' component={SessionFooter} />
+          <Route path='/app/vote/review' component={SessionFooter} />
         </Switch>
       </div>
     )
