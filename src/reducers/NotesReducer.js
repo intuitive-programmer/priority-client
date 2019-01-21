@@ -10,7 +10,7 @@ const testNote = {
   votes: 0
 }
 
-const NotesReducer = (state = [testNote], action) => {
+const NotesReducer = (state = [], action) => {
   switch (action.type) {
     case "CREATE_NOTE":
     return [...state, action.noteToCreate]
@@ -18,6 +18,8 @@ const NotesReducer = (state = [testNote], action) => {
     return addVote(state, action.id)
     case "REMOVE_VOTE":
     return removeVote(state, action.id)
+    case "SORT_BY_VOTES":
+    return sortByVotes(state)
     default:
     return state
   }
@@ -49,5 +51,14 @@ const removeVote = (notes, id) => {
 
 const sortById = array => array
   .sort(function(a, b) { return a.id - b.id })
+
+const sortByVotes = notes => {
+  const notesWithVotes = notes.filter(note => note.votes > 0)
+
+  const notesSortedByVotes = notesWithVotes
+    .sort(function(a, b) { return b.votes - a.votes })
+
+  return notesSortedByVotes
+}
 
 export default NotesReducer

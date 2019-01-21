@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { Button } from '@material-ui/core'
 
@@ -33,13 +34,19 @@ class SessionFooter extends Component {
     )
   }
 
-  renderSortBtn = () => (
-    <Button
-      variant="contained"
-      color="primary"
-      onClick={() => this.setState({ displaySortBtn: false })}
-    >Sort By Priority</Button>
-  )
+  renderSortBtn = () => {
+    const { sortByVote } = this.props
+    return(
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          sortByVote()
+          this.setState({ displaySortBtn: false })
+        }}
+      >Sort By Priority</Button>
+    )
+  }
 
   renderNextStepBtn = () => (
     <Button
@@ -50,4 +57,8 @@ class SessionFooter extends Component {
   )
 }
 
-export default SessionFooter
+const mapDispatchToProps = dispatch => ({
+  sortByVote: () => dispatch({ type: "SORT_BY_VOTES" })
+})
+
+export default connect(null, mapDispatchToProps)(SessionFooter)
