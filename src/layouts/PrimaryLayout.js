@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavBar from '../ui/NavBar'
 import { WelcomePage, LaunchPage } from '../pages'
-import { SessionLayout } from '.'
+import { SessionLayout, DashboardLayout } from '.'
 
 const PrimaryLayout = () => (
   <div id="primary-layout" className="full-container">
@@ -14,6 +14,7 @@ const PrimaryLayout = () => (
         <Route path='/welcome' exact component={WelcomePage} />
         <Route path='/launch' component={LaunchPage} />
         <Route path='/app' component={SessionLayout} />
+        <Route path='/dashboard' component={DashboardLayout} />
         <Redirect to='/welcome' />
       </Switch>
     </main>

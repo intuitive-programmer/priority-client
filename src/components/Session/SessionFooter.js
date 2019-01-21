@@ -15,7 +15,7 @@ class SessionFooter extends Component {
       case 'note':
       return history.push('/app/vote/start')
       case 'vote':
-      return console.log("next bit")
+      return history.push('/dashboard')
       default:
       return null
     }
