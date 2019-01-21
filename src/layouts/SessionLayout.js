@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import { NoteCreator, StartDialog, NotesList, SessionFooter, TimerPrompt } from '../components/Session'
+import { NoteCreator, StartDialog, NotesList, SessionFooter, TimerPrompt, VotesHeader } from '../components/Session'
 
 class SessionLayout extends Component {
   state = {
@@ -58,9 +58,7 @@ class SessionLayout extends Component {
                 />
               }
             />
-            <Route path='/app/vote'
-              render={() => <div>Vote Header</div>}
-            />
+            <Route path='/app/vote' component={VotesHeader} />
           </Switch>
         </header>
         <main className="session-main">
@@ -83,7 +81,7 @@ class SessionLayout extends Component {
                 />
               }
             />
-            <Route path='/app/vote/write' component={NotesList} />
+            <Route path='/app/vote/prioritise' component={NotesList} />
             <Route path='/app/vote/review' component={NotesList} />
             <Redirect to='/app/note/start' />
           </Switch>

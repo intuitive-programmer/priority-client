@@ -1,0 +1,36 @@
+.votes-header-container,
+.votes-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.votes-header-container {
+  
+}
+
+.votes-container {
+  position: absolute;
+  right: 0.5em;
+}
+
+.vote {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid #f8f6f1;
+  background-color: #c62828;
+}
+
+.vote {
+  justify-content: center;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  color: $white;
+}
+
+li:nth-child(n+2) { margin-left: -12px; }

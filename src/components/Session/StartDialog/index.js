@@ -6,6 +6,14 @@ import { SessionStyles } from '../../../stylesheets/material-ui'
 
 const StartDialog = ({ startTimer, match }) => {
   const currentScene = match.url.split('/')[2]
+  
+  const nextScene = () => {
+    if (currentScene === 'note') {
+      return '/app/note/write'
+    } else if (currentScene === 'vote') {
+      return '/app/vote/prioritise'
+    }
+  }
 
   return(
     <Dialog
@@ -14,7 +22,7 @@ const StartDialog = ({ startTimer, match }) => {
       <DialogTitle>Get Ready!</DialogTitle>
       <DialogContent>Timer Begins When You Press Start...</DialogContent>
       <DialogActions>
-        <Link to={`/app/${currentScene}/write`} className="clean-link">
+        <Link to={nextScene()} className="clean-link">
           <Button
             onClick={() => startTimer(currentScene)}
           >

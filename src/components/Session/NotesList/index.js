@@ -5,6 +5,7 @@ import { withStyles, Grid } from '@material-ui/core'
 import { SessionStyles } from '../../../stylesheets/material-ui'
 
 import NoteItem from './NoteItem'
+import VoteItem from './VoteItem'
 
 class NotesList extends Component {
   render() {
@@ -22,8 +23,8 @@ class NotesList extends Component {
   }
 
   renderList = note => {
-    const { classes } = this.props
-    
+    const { classes, match } = this.props
+    const currentScene = match.url.split('/')[2]
     return(
       <Grid
         item
@@ -31,7 +32,10 @@ class NotesList extends Component {
         xs={12}
         sm={8}
       >
-        <NoteItem key={note.id} note={note} />
+        {currentScene === 'note'
+          ? <NoteItem key={note.id} note={note} />
+          : <VoteItem key={note.id} note={note} />
+        }
       </Grid>
     )
   }
