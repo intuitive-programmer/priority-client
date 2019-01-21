@@ -14,9 +14,10 @@
 .timer-prompt {
   position: absolute;
   top: 5em;
-  width: 12em;
-  height: 6em;
+  width: 16em;
+  height: 9em;
   padding: 1em;
-  border-radius: 1em;
+  flex-wrap: wrap;
+  border-radius: 0.5em;
   background-color: $white;
 }

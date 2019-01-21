@@ -15,13 +15,19 @@ class SessionLayout extends Component {
       this.setState({
         displayTimer: true,
         disableNoteCreator: true
-      }), 1000)
+      }), 10000)
   }
 
-  hideTimerAndActivateNoteCreator = () => this.setState({
-    displayTimer: false,
-    disableNoteCreator: false
-  })
+  addTime = () => {
+    setTimeout(() => {
+      this.props.history.push('/app/note/review')
+      this.setState({ disableNoteCreator: true })
+    }, 5000)
+  }
+
+  hideTimer = () => this.setState({ displayTimer: false })
+
+  toggleNoteCreator = () => this.setState(state => ({ disableNoteCreator: !state.disableNoteCreator }))
 
   render() {
     const { displayTimer, disableNoteCreator } = this.state
@@ -30,16 +36,22 @@ class SessionLayout extends Component {
         <header className="session-header flex-center">
           {displayTimer &&
             <TimerPrompt
-            hideTimerAndActivateNoteCreator={this.hideTimerAndActivateNoteCreator}
+              hideTimer={this.hideTimer}
+              addTime={this.addTime}
+              toggleNoteCreator={this.toggleNoteCreator}
             />
           }
           <Switch>
             <Route path='/app/note'
               render={routerProps =>
                 <NoteCreator
-                disableNoteCreator={disableNoteCreator}
+                  {...routerProps}
+                  disableNoteCreator={disableNoteCreator}
                 />
               }
+            />
+            <Route path='/app/vote'
+              render={() => <div>Vote Header</div>}
             />
           </Switch>
         </header>
@@ -54,6 +66,15 @@ class SessionLayout extends Component {
               }
             />
             <Route path='/app/note/write' component={NotesList} />
+            <Route path='/app/note/review' component={NotesList} />
+            <Route path='/app/vote/start'
+              render={routerProps => 
+                <StartDialog
+                  {...routerProps}
+                  startTimer={this.startTimer}
+                />
+              }
+            />
             <Redirect to='/app/note/start' />
           </Switch>
         </main>
