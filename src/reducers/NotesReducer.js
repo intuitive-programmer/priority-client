@@ -1,4 +1,16 @@
-const NotesReducer = (state = [], action) => {
+const testNote = {
+  id: 1,
+  text: "Here is a #test note.",
+  keywords: [
+    {
+      id: 1,
+      text: "test"
+    }
+  ],
+  votes: 0
+}
+
+const NotesReducer = (state = [testNote], action) => {
   switch (action.type) {
     case "CREATE_NOTE":
     return [...state, action.noteToCreate]

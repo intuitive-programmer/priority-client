@@ -18,7 +18,7 @@ class SessionLayout extends Component {
       this.setState({
         displayTimer: true,
         disableNoteCreator: true
-      }), 20000)
+      }), 10000)
     } else if (scene === 'vote') {
       setTimeout(() => {
         history.push('/app/vote/review')

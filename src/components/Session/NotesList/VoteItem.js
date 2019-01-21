@@ -13,14 +13,14 @@ class VoteItem extends Component {
   }
 
   addVoteToNote = () => {
-    const { votes, note, addVote } = this.props
-    if (votes > 0) addVote(note.id)
+    const { votes, note, addVote, votingEnabled } = this.props
+    if (votes > 0 && votingEnabled) addVote(note.id)
   }
 
   removeVoteFromNote = event => {
     event.stopPropagation()
-    const { note, removeVote } = this.props
-    if (note.votes > 0) removeVote(note.id)
+    const { note, removeVote, votingEnabled } = this.props
+    if (note.votes > 0 && votingEnabled) removeVote(note.id)
   }
 
   render() {

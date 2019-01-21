@@ -8,6 +8,15 @@ import NoteItem from './NoteItem'
 import VoteItem from './VoteItem'
 
 class NotesList extends Component {
+  state = {
+    votingEnabled: true
+  }
+
+  componentWillReceiveProps({ match }) {
+    const currentPart = match.url.split('/')[3]
+    if (currentPart === 'review') this.setState({ votingEnabled: false })
+  }
+
   render() {
     const { classes, notes } = this.props
     return(
@@ -23,6 +32,7 @@ class NotesList extends Component {
   }
 
   renderList = note => {
+    const { votingEnabled } = this.state
     const { classes, match } = this.props
     const currentScene = match.url.split('/')[2]
     return(
@@ -34,7 +44,11 @@ class NotesList extends Component {
       >
         {currentScene === 'note'
           ? <NoteItem key={note.id} note={note} />
-          : <VoteItem key={note.id} note={note} />
+          : <VoteItem
+              key={note.id}
+              note={note}
+              votingEnabled={votingEnabled}
+            />
         }
       </Grid>
     )
