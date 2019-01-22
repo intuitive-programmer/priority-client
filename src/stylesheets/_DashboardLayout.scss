@@ -10,18 +10,12 @@
 .main-note-btns {
   width: 100%;
   height: 10em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @media only screen and (min-width: 600px) {
   .main-note-section {
     width: 50%;
     height: 20em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -30,15 +24,19 @@
 }
 
 .current-note-container {
-  width: 100%;
-  height: 10em;
   padding: 0 1em;
 }
 
-.current-note-header,
-.current-note-footer {
+.current-note-section {
   width: 100%;
   height: 5em;
+}
+
+@media only screen and (min-width: 600px) {
+  .current-note-section {
+    width: 100%;
+    height: 10em;
+  }
 }
 
 .current-note-footer {

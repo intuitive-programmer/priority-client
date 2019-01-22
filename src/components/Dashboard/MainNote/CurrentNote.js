@@ -18,11 +18,11 @@ const CurrentNote = ({ note }) => {
   }
 
   return(
-    <div className="current-note-container">
-      <header className="current-note-header flex-center">
+    <div className="main-note-section current-note-container">
+      <header className="current-note-section current-note-header flex-center">
         {note.text}
       </header>
-      <footer className="current-note-footer">
+      <footer className="current-note-section current-note-footer">
         <div className="keywords-container">
           <div className="note-keywords">
             {note.keywords.map(keyword =>
