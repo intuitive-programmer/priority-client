@@ -102,6 +102,7 @@ class ActionSteps extends Component {
       let stepId = `step00${i}Input`
       const actionStepInput =
         <TextField
+          key={i}
           id={stepId}
           classes={{
             root: classes.textfield

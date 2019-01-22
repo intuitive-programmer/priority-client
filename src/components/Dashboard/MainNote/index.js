@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { withStyles, Grid, Button } from '@material-ui/core'
 import { DashboardStyles } from '../../../stylesheets/material-ui'
@@ -23,14 +24,16 @@ const MainNote = ({ classes }) => (
         <CurrentNote />
         <ActionSteps />
         <div className="main-note-btns flex-center">
-          <Button
-            type="submit"
-            form="action-steps-form"
-            variant="contained"
-            color="primary"
-          >
-            Save
-          </Button>
+          <Link to='/dashboard/create-project' className="clean-link">
+            <Button
+              type="submit"
+              form="action-steps-form"
+              variant="contained"
+              color="primary"
+            >
+              Save
+            </Button>
+          </Link>
         </div>
       </div>
     </Grid>

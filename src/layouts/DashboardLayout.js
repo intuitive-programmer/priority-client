@@ -1,13 +1,15 @@
 import React from 'react'
 
-import { Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
-import { MainNote } from '../components/Dashboard'
+import { MainNote, ProjectCreatorDialog } from '../components/Dashboard'
 
 const DashboardLayout = () => (
   <div id="dashboard-layout" className="full-container">
     <Route path='/dashboard' component={MainNote} />
-    <Route path='/dashboard/create-project' render={() => console.log("create project")} />
+    <Switch>
+      <Route path='/dashboard/create-project' exact component={ProjectCreatorDialog} />
+    </Switch>
   </div>
 )
 
