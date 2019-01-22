@@ -1,19 +1,46 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { withStyles, Grid, TextField } from '@material-ui/core'
 import { DashboardStyles } from '../../../stylesheets/material-ui'
 
 class ActionSteps extends Component {
   state = {
-    actionSteps: [],
-    actionStep001Input: '',
-    actionStep002Input: '',
-    actionStep003Input: ''
+    step001Input: '',
+    step002Input: '',
+    step003Input: ''
   }
 
   handleActionStepsInput = event => this.setState({
     [event.target.id]: event.target.value
   })
+
+  handleActionStepsSubmit = event => {
+    event.preventDefault()
+
+    const { step001Input, step002Input, step003Input } = this.state
+    const { saveActionSteps } = this.props
+
+    let stepId = 1
+    
+    const actionSteps = [step001Input, step002Input, step003Input]
+      .map(stepInput => ({
+        id: stepId++,
+        actionStep: stepInput
+      }))
+
+    saveActionSteps(actionSteps)
+    this.clearInputs()
+    event.target.reset()
+  }
+
+  clearInputs = () => {
+    this.setState({
+      step001Input: '',
+      step002Input: '',
+      step003Input: ''
+    })
+  }
 
   render() {
     const { classes } = this.props
@@ -32,7 +59,8 @@ class ActionSteps extends Component {
             <h3 className="action-steps-heading heading">Write 3 Action Steps</h3>
             <p className="subtitle">That are achievable within 2 weeks</p>
             <form
-              className="action-steps-form"
+              id="action-steps-form"
+              onSubmit={this.handleActionStepsSubmit}
               noValidate
               autoComplete="off"
             >
@@ -49,13 +77,15 @@ class ActionSteps extends Component {
     const actionStepsEls = []
 
     for (let i = 1; i < 4; i++) {
+      let stepId = `step00${i}Input`
       const actionStepInput =
         <TextField
-          id={'actionStep00' + i + 'Input'}
+          id={stepId}
           classes={{
             root: classes.textfield
           }}
           label={'Action Step ' + i}
+          value={this.state.stepId}
           onChange={this.handleActionStepsInput}
           fullWidth
         />
@@ -67,4 +97,8 @@ class ActionSteps extends Component {
   }
 }
 
-export default withStyles(DashboardStyles)(ActionSteps)
+const mapDispatchToProps = dispatch => ({
+  saveActionSteps: actionSteps => dispatch({ type: "SAVE_ACTION_STEPS", actionSteps })
+})
+
+export default connect(null, mapDispatchToProps)(withStyles(DashboardStyles)(ActionSteps))

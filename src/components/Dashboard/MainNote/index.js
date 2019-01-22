@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { withStyles, Grid } from '@material-ui/core'
+import { withStyles, Grid, Button } from '@material-ui/core'
 import { DashboardStyles } from '../../../stylesheets/material-ui'
 
 import CurrentNote from './CurrentNote'
@@ -22,8 +22,15 @@ const MainNote = ({ classes, note }) => (
       <div className="main-note-container light-shadow">
         <CurrentNote note={note} />
         <ActionSteps />
-        <div className="main-note-btns">
-        
+        <div className="main-note-btns flex-center">
+          <Button
+            type="submit"
+            form="action-steps-form"
+            variant="contained"
+            color="primary"
+          >
+            Save
+          </Button>
         </div>
       </div>
     </Grid>
