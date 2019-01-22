@@ -18,8 +18,8 @@ const CurrentNote = ({ note }) => {
   }
 
   return(
-    <div className="main-note-section current-note-container">
-      <header className="current-note-section current-note-header flex-center">
+    <div className="main-note-section">
+      <header className="current-note-section flex-center">
         {note.text}
       </header>
       <footer className="current-note-section current-note-footer">

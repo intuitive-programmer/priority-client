@@ -51,6 +51,20 @@ $votes-red: #d15353;
   background-color: $parchment;
 }
 
+/*** FONT STYLES ***/
+
+.heading {
+  margin-block-start: 1em;
+  margin-block-end: 0.5em;
+}
+
+.subtitle {
+  margin-block-start: 0;
+  margin-block-end: 0.5em;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
 /*** BOX SHADOW ***/
 
 @mixin box-shadow($params...) {

@@ -78,6 +78,9 @@ const DashboardStyles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
+  textfield: {
+    marginBottom: 8,
+  }
 }
 
 export {
