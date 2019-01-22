@@ -21,7 +21,7 @@ class ActionSteps extends Component {
     event.preventDefault()
 
     const { step001Input, step002Input, step003Input } = this.state
-    const { saveActionSteps } = this.props
+    const { saveActionSteps, history } = this.props
 
     let stepId = 1
     
@@ -30,12 +30,13 @@ class ActionSteps extends Component {
     const isValid = this.validateInputs(actionSteps)
 
     if (isValid) {
-      actionSteps.map(stepInput => ({
+      const actionStepsAsObjects = actionSteps.map(stepInput => ({
           id: stepId++,
           actionStep: stepInput
         }))
-  
-      saveActionSteps(actionSteps)
+        
+      saveActionSteps(actionStepsAsObjects)
+      history.push('/dashboard/create-project')
       this.resetState()
       event.target.reset()
     } else {
