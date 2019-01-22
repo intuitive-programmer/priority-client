@@ -1,21 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-// import { Switch, Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import { MainNote } from '../components/Dashboard'
 
-const DashboardLayout = ({ notes }) => (
+const DashboardLayout = () => (
   <div id="dashboard-layout" className="full-container">
-    <MainNote note={notes[0]} />
-    <div>
-
-    </div>
+    <Route path='/dashboard' component={MainNote} />
+    <Route path='/dashboard/create-project' render={() => console.log("create project")} />
   </div>
 )
 
-const mapStateToProps = state => ({
-  notes: state.notes
-})
-
-export default connect(mapStateToProps)(DashboardLayout)
+export default DashboardLayout

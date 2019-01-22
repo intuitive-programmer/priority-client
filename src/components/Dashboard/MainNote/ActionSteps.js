@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 
 import { withStyles, Grid, TextField } from '@material-ui/core'
 import { DashboardStyles } from '../../../stylesheets/material-ui'
+import ErrorMessage from '../../ErrorMessage';
 
 class ActionSteps extends Component {
   state = {
     step001Input: '',
     step002Input: '',
-    step003Input: ''
+    step003Input: '',
+    inputError: null
   }
 
   handleActionStepsInput = event => this.setState({
@@ -24,25 +26,44 @@ class ActionSteps extends Component {
     let stepId = 1
     
     const actionSteps = [step001Input, step002Input, step003Input]
-      .map(stepInput => ({
-        id: stepId++,
-        actionStep: stepInput
-      }))
 
-    saveActionSteps(actionSteps)
-    this.clearInputs()
-    event.target.reset()
+    const isValid = this.validateInputs(actionSteps)
+
+    if (isValid) {
+      actionSteps.map(stepInput => ({
+          id: stepId++,
+          actionStep: stepInput
+        }))
+  
+      saveActionSteps(actionSteps)
+      this.resetState()
+      event.target.reset()
+    } else {
+      this.setState({
+        inputError: "Please fill in all Action Steps!"
+      })
+    }
   }
 
-  clearInputs = () => {
+  validateInputs = actionSteps => {
+    if (actionSteps.includes('')) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  resetState = () => {
     this.setState({
       step001Input: '',
       step002Input: '',
-      step003Input: ''
+      step003Input: '',
+      inputError: null
     })
   }
 
   render() {
+    const { inputError } = this.state
     const { classes } = this.props
     return(
       <div className="main-note-section action-steps-container">
@@ -66,6 +87,7 @@ class ActionSteps extends Component {
             >
               {this.renderActionStepsInputs()}
             </form>
+            <ErrorMessage error={inputError ? inputError : ''} />
           </Grid>
         </Grid>
       </div>

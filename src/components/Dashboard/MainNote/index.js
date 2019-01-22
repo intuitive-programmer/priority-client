@@ -7,7 +7,7 @@ import CurrentNote from './CurrentNote'
 import ActionSteps from './ActionSteps'
 
 
-const MainNote = ({ classes, note }) => (
+const MainNote = ({ classes }) => (
   <Grid
     container
     classes={{ container: classes.centered }}
@@ -20,7 +20,7 @@ const MainNote = ({ classes, note }) => (
       xs={12}
     >
       <div className="main-note-container light-shadow">
-        <CurrentNote note={note} />
+        <CurrentNote />
         <ActionSteps />
         <div className="main-note-btns flex-center">
           <Button

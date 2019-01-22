@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const CurrentNote = ({ note }) => {
   const renderVotes = () => {
@@ -43,4 +44,8 @@ const CurrentNote = ({ note }) => {
   )
 }
 
-export default CurrentNote
+const mapStateToProps = state => ({
+  note: state.notes[0]
+})
+
+export default connect(mapStateToProps)(CurrentNote)

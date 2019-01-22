@@ -6,7 +6,7 @@ import { Add } from '@material-ui/icons'
 import { SessionStyles } from '../../../stylesheets/material-ui'
 
 import NoteInput from './NoteInput'
-import ErrorMessage from './ErrorMessage'
+import ErrorMessage from '../../ErrorMessage'
 
 let noteCount = 0
 
