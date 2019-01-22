@@ -7,10 +7,10 @@ const testNote = {
       text: "test"
     }
   ],
-  votes: 0
+  votes: 3
 }
 
-const NotesReducer = (state = [], action) => {
+const NotesReducer = (state = [testNote], action) => {
   switch (action.type) {
     case "CREATE_NOTE":
     return [...state, action.noteToCreate]

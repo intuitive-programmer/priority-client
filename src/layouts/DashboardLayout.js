@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+import { MainNote } from '../components/Dashboard'
+
 const DashboardLayout = ({ notes }) => (
   <div id="dashboard-layout" className="full-container">
-    <div>
-      {console.log(notes)}
-    </div>
+    <MainNote note={notes[0]} />
     <div>
 
     </div>

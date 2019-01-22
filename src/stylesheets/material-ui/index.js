@@ -70,9 +70,20 @@ const SessionStyles = {
   }
 }
 
+const DashboardStyles = {
+  centered: {
+    margin: '0 auto',
+    padding: '0 0.5em',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+}
+
 export {
   theme,
   PrimaryLayoutStyles,
   LaunchPageStyles,
-  SessionStyles
+  SessionStyles,
+  DashboardStyles
 }

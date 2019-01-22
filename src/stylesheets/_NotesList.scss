@@ -71,21 +71,3 @@
     overflow-x: auto;
   }
 }
-
-.keywords-container {
-  position: absolute;
-  left: 8.25em;
-  // overflow-x: auto;
-  // overflow needs to be looked at
-}
-
-.keyword-chip {
-  width: fit-content;
-  height: auto;
-  margin: 0 0.125em; 
-  padding: 0.25em 0.625em 0.25em 0.625em;
-  border-radius: 1em;
-  background-color: $primary-main;
-  font-size: 0.75em;
-  color: $white;
-}
