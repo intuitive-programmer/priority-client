@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
@@ -11,14 +12,14 @@ class SessionLayout extends Component {
   }
 
   startTimer = scene => {
-    const { history } = this.props
+    const { history, sessionTimer } = this.props
 
     if (scene === 'note') {
       setTimeout(() =>
       this.setState({
         displayTimer: true,
         disableNoteCreator: true
-      }), 30000)
+      }), sessionTimer)
     } else if (scene === 'vote') {
       setTimeout(() => {
         history.push('/app/vote/review')
@@ -30,7 +31,7 @@ class SessionLayout extends Component {
     setTimeout(() => {
       this.props.history.push('/app/note/review')
       this.setState({ disableNoteCreator: true })
-    }, 5000)
+    }, 60000)
   }
 
   hideTimer = () => this.setState({ displayTimer: false })
@@ -95,4 +96,8 @@ class SessionLayout extends Component {
   }
 }
 
-export default SessionLayout
+const mapStateToProps = state => ({
+  sessionTimer: state.currentSession.timer
+})
+
+export default connect(mapStateToProps)(SessionLayout)

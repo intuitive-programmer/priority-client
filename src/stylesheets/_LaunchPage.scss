@@ -2,3 +2,11 @@
   height: 40%;
   padding: 1em 0;
 }
+
+#launch-form {
+  height: 8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
