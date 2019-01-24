@@ -29,7 +29,7 @@ const MainNote = ({ classes, history }) => (
             variant="contained"
             color="primary"
           >
-            Save
+            Done
           </Button>
         </div>
       </div>

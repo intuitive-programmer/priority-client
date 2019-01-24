@@ -36,9 +36,10 @@ class ActionSteps extends Component {
         }))
         
       saveActionSteps(actionStepsAsObjects)
-      history.push('/dashboard/create-project')
+      history.push('/dashboard/done') // Just for Science Fair
+      // history.push('/dashboard/create-project')
       this.resetState()
-      event.target.reset()
+      // event.target.reset()
     } else {
       this.setState({
         inputError: "Please fill in all Action Steps!"
