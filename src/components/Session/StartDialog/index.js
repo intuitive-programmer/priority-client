@@ -20,7 +20,13 @@ const StartDialog = ({ startTimer, match }) => {
       open={true}
     >
       <DialogTitle>Get Ready!</DialogTitle>
-      <DialogContent>Timer Begins When You Press Start...</DialogContent>
+      <DialogContent>
+        <p>Timer Begins When You Press Start...</p>
+        {currentScene === 'note'
+          ? <p>Remember to write down as many ideas as possible. It's at the edges of the conscious mind where you'll find the treasure.</p>
+          : <p>Click on the notes to add a vote. Click on the votes to remove.</p>
+        }
+      </DialogContent>
       <DialogActions>
         <Link to={nextScene()} className="clean-link">
           <Button

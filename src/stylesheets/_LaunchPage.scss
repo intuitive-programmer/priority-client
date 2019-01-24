@@ -10,3 +10,17 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.launch-text {
+  text-align: center;
+  color: $primary-dark;
+}
+
+.process-list {
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin-bottom: 0.5em;
+  }
+}
